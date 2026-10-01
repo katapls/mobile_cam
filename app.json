@@ -1,17 +1,12 @@
 {
   "expo": {
     "name": "controle_alimento",
-    "slug": "controle_alimento",
+    "slug": "controle-alimento-demo",
+    "scheme": "sensoresdemo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#B51E2A"
-    },
     "ios": {
       "supportsTablet": true
     },
@@ -19,14 +14,38 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#B51E2A"
-      },
-      "edgeToEdgeEnabled": true
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-status-bar"
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permita que o app use a câmera para tirar uma foto.",
+          "microphonePermission": "Permita o microfone somente para recursos de captura.",
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Permita que o app use o microfone para gravar um áudio de demonstração.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Sua localização é usada apenas para mostrar sua posição atual nesta tela."
+        }
+      ],
+      "expo-notifications",
+      "expo-status-bar",
+      "expo-font",
+      "expo-asset"
     ]
   }
 }
